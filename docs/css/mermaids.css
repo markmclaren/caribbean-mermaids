@@ -1,0 +1,438 @@
+:root {
+  --gold: #c5a059;
+  --gold-light: #e8c97a;
+  --gold-dark: #8b6914;
+  --parchment: #f5f0e8;
+  --parchment-dark: #e8e0cc;
+  --ink: #1a1208;
+  --sea-deep: #0a1628;
+  --sea-mid: #12294a;
+  --seal-light: #1e3f6e;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--sea-deep);
+  font-family: 'IM Fell DW Pica', Georgia, serif;
+  overflow: hidden;
+  height: 100vh;
+  display: flex;
+}
+
+#map {
+  flex: 1;
+  min-width: 0;
+  height: 100vh;
+}
+
+#title-overlay {
+  position: fixed;
+  top: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  text-align: center;
+  pointer-events: none;
+}
+
+#title-overlay h1 {
+  font-family: 'Cinzel Decorative', serif;
+  font-weight: 400;
+  color: var(--gold-light);
+  font-size: clamp(1rem, 2.5vw, 1.6rem);
+  letter-spacing: 0.12em;
+  text-shadow: 0 0 6px rgba(255,255,255,0.65), 0 0 18px rgba(255,255,255,0.18), 0 0 30px rgba(197,160,89,0.6), 0 2px 8px rgba(0,0,0,0.9);
+  white-space: nowrap;
+}
+
+#title-overlay p {
+  font-family: 'Cinzel', serif;
+  color: rgba(232,201,122,0.7);
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  margin-top: 4px;
+  text-shadow: 0 0 4px rgba(255,255,255,0.35);
+}
+
+.mermaid-marker {
+  cursor: pointer;
+  width: 44px;
+  height: 44px;
+}
+
+.mermaid-marker:hover svg {
+  transform: scale(1.15);
+}
+
+.mermaid-marker svg {
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.8));
+  transition: transform 0.2s ease;
+}
+
+.tarot-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.75);
+  z-index: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  backdrop-filter: blur(4px);
+  box-shadow: inset 0 0 80px rgba(255,255,255,0.1), 0 0 30px rgba(255,255,255,0.12);
+}
+
+#tarot-modal {
+  box-shadow: inset 0 0 100px rgba(255,255,255,0.1), 0 0 40px rgba(255,255,255,0.18);
+}
+
+.tarot-modal-overlay.visible {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.sidebar-overlay {
+  width: min(420px, 90vw);
+  background: var(--parchment);
+  border-left: 10px solid var(--gold);
+  border-radius: 0 0 0 0;
+  box-shadow: -20px 0 60px rgba(0,0,0,0.35);
+  z-index: 100;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.sidebar-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 20px 12px;
+  border-bottom: 1px solid rgba(197,160,89,0.3);
+  background: rgba(245,240,232,0.95);
+}
+
+.sidebar-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  align-items: center;
+  width: 100%;
+  margin-top: 0;
+}
+
+.sidebar-nav button,
+.sidebar-nav select {
+  font-family: 'IM Fell DW Pica', serif;
+  border: 1px solid rgba(10,22,40,0.2);
+  background: rgba(10,22,40,0.9);
+  color: #fff;
+  padding: 9px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.sidebar-nav select {
+  flex: 1;
+  min-width: 140px;
+  background: rgba(255,255,255,0.95);
+  color: var(--ink);
+  border-color: rgba(197,160,89,0.5);
+}
+
+.sidebar-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow: hidden;
+}
+
+.sidebar-intro {
+  display: none;
+  padding: 22px 20px;
+  color: var(--ink);
+  line-height: 1.75;
+  font-size: 0.95rem;
+}
+
+.sidebar-intro h3 {
+  margin-bottom: 12px;
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 1.2rem;
+  color: var(--gold-dark);
+}
+
+.tarot-card {
+  position: relative;
+  background: var(--parchment);
+  border: 10px solid var(--gold);
+  border-radius: 16px;
+  box-shadow:
+    0 0 0 2px var(--gold-dark),
+    0 0 60px rgba(197,160,89,0.4),
+    0 20px 60px rgba(0,0,0,0.8);
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.sidebar-card {
+  display: none;
+  width: 100%;
+  flex: 1;
+  margin: 0;
+  min-height: 0;
+}
+
+.sidebar-card.hidden {
+  display: none;
+}
+
+.tarot-modal-overlay.visible .tarot-card {
+  transform: translateY(0) scale(1);
+}
+
+.tarot-card::before,
+.tarot-card::after {
+  content: '✦';
+  position: absolute;
+  color: var(--gold-dark);
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.tarot-card::before {
+  top: 6px;
+  left: 10px;
+}
+
+.tarot-card::after {
+  bottom: 6px;
+  right: 10px;
+}
+
+.card-inner-border {
+  position: absolute;
+  inset: 6px;
+  border: 1px solid rgba(197,160,89,0.35);
+  border-radius: 10px;
+  pointer-events: none;
+}
+
+.card-numeral {
+  font-family: 'Cinzel', serif;
+  text-align: center;
+  font-size: 1rem;
+  color: var(--gold-dark);
+  letter-spacing: 0.15em;
+  margin-bottom: 6px;
+  flex-shrink: 0;
+}
+
+.card-illustration {
+  position: relative;
+  height: 260px;
+  overflow: hidden;
+  border: 2px solid var(--gold-dark);
+  border-radius: 4px;
+  background: var(--ink);
+  flex-shrink: 0;
+}
+
+.card-illustration img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: opacity 0.5s ease;
+  opacity: 0;
+}
+
+.card-illustration img.active {
+  opacity: 1;
+}
+
+.img-arrow {
+  position: absolute;
+  top: 50%;
+  width: 32px;
+  height: 32px;
+  margin-top: -16px;
+  border: 1px solid rgba(197,160,89,0.9);
+  border-radius: 50%;
+  background: rgba(15,25,40,0.8);
+  color: var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 12;
+  transition: background 0.2s, transform 0.2s;
+  font-size: 1.1rem;
+  line-height: 1;
+}
+
+.img-arrow:hover {
+  background: rgba(197,160,89,0.9);
+  transform: scale(1.05);
+}
+
+.img-arrow-left {
+  left: 10px;
+}
+
+.img-arrow-right {
+  right: 10px;
+}
+
+.img-nav {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+  z-index: 10;
+}
+
+.img-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 1px solid var(--gold);
+  background: transparent;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.img-dot.active {
+  background: var(--gold);
+}
+
+.card-title-banner {
+  font-family: 'Cinzel', serif;
+  text-align: center;
+  background: var(--parchment-dark);
+  border: 2px solid var(--gold-dark);
+  margin: 10px 0 8px;
+  padding: 6px 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ink);
+  flex-shrink: 0;
+}
+
+.card-location-tag {
+  font-family: 'Cinzel', serif;
+  font-size: 0.62rem;
+  text-align: center;
+  color: var(--gold-dark);
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  flex-shrink: 0;
+}
+
+.card-body-scroll {
+  overflow-y: auto;
+  flex: 1;
+  min-height: 0;
+  padding-right: 4px;
+}
+
+.card-body-scroll::-webkit-scrollbar {
+  width: 4px;
+}
+
+.card-body-scroll::-webkit-scrollbar-track {
+  background: var(--parchment-dark);
+}
+
+.card-body-scroll::-webkit-scrollbar-thumb {
+  background: var(--gold);
+  border-radius: 2px;
+}
+
+.card-description {
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #231a0f;
+  text-align: left;
+  hyphens: auto;
+  letter-spacing: 0.02em;
+}
+
+.card-artist {
+  font-family: 'IM Fell DW Pica', serif;
+  font-style: italic;
+  font-size: 0.68rem;
+  color: var(--gold-dark);
+  text-align: center;
+  margin-top: 8px;
+  padding-top: 6px;
+  border-top: 1px solid rgba(197,160,89,0.4);
+}
+
+.card-close {
+  position: absolute;
+  top: -14px;
+  right: -14px;
+  width: 30px;
+  height: 30px;
+  background: var(--ink);
+  border: 2px solid var(--gold);
+  border-radius: 50%;
+  color: var(--gold);
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: background 0.2s;
+}
+
+.card-close:hover {
+  background: var(--gold-dark);
+  color: var(--parchment);
+}
+
+.ornament {
+  text-align: center;
+  color: var(--gold-dark);
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  margin: 6px 0;
+  flex-shrink: 0;
+}
+
+.maplibregl-ctrl-attrib {
+  font-size: 9px !important;
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    filter: drop-shadow(0 0 4px rgba(197,160,89,0.8));
+  }
+  50% {
+    filter: drop-shadow(0 0 12px rgba(197,160,89,1));
+  }
+}
+
+.mermaid-marker svg {
+  animation: pulse-glow 2.5s ease-in-out infinite;
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mermaids of the Caribbean — Bathymetry (Sidebar)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cinzel:wght@400;600&family=IM+Fell+DW+Pica:ital@0;1&display=swap" rel="stylesheet">
+  <link href="https://unpkg.com/maplibre-gl@5.24.0/dist/maplibre-gl.css" rel="stylesheet">
+  <link href="css/mermaids.css" rel="stylesheet">
+</head>
+<body>
+  <div id="title-overlay">
+    <h1>Mermaids of the Caribbean</h1>
+    <p>Folklore &amp; Water Spirits of the Islands</p>
+  </div>
+
+  <div id="map"></div>
+
+  <!-- ZOOM DISPLAY: remove this div to hide it -->
+  <div id="zoom-display" style="position:absolute;top:12px;right:12px;z-index:10;background:rgba(10,22,40,0.8);color:#c5a059;font-family:Cinzel,serif;font-size:13px;padding:4px 10px;border:1px solid #c5a059;border-radius:4px;pointer-events:none;">z: <span id="zoom-value">—</span></div>
+
+  <div class="sidebar-overlay" id="sidebar-overlay">
+    <div class="sidebar-top">
+      <div class="sidebar-nav">
+        <button id="prev-location" type="button">‹ Prev</button>
+        <button id="next-location" type="button">Next ›</button>
+      </div>
+    </div>
+    <div class="sidebar-content">
+      <div class="sidebar-intro" id="sidebar-intro">
+        <h3>Welcome</h3>
+        <p>Select a mermaid location above or click a map marker to view the story and artwork in the sidebar.</p>
+      </div>
+      <div class="tarot-card sidebar-card" id="sidebar-card">
+        <div class="card-inner-border"></div>
+        <div class="card-numeral" id="card-numeral">I</div>
+        <div class="card-illustration" id="card-illustration"></div>
+        <div class="card-title-banner" id="card-title"></div>
+        <div class="card-location-tag" id="card-location"></div>
+        <div class="ornament">— ✦ —</div>
+        <div class="card-body-scroll">
+          <p class="card-description" id="card-description"></p>
+          <p class="card-artist" id="card-artist"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/maplibre-gl@5.24.0/dist/maplibre-gl.js"></script>
+  <script src="https://unpkg.com/pmtiles@4.3.0/dist/pmtiles.js"></script>
+  <script src="js/mermaids_bathymetry_sidebar.js"></script>
+</body>
+</html>

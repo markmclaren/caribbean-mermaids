@@ -265,6 +265,7 @@ function makeMarkerEl(numeral) {
 }
 
 let LOCATIONS = [];
+let markerElements = [];
 let currentLocationIndex = -1;
 const sidebarIntro = document.getElementById('sidebar-intro');
 const sidebarCard = document.getElementById('sidebar-card');
@@ -275,6 +276,7 @@ function showIntro() {
   sidebarIntro.style.display = 'block';
   sidebarCard.style.display = 'none';
   currentLocationIndex = -1;
+  markerElements.forEach(marker => marker.classList.remove('is-active'));
 }
 
 function setLocationIndex(index) {
@@ -282,6 +284,7 @@ function setLocationIndex(index) {
   const count = LOCATIONS.length;
   const normalizedIndex = ((index % count) + count) % count;
   currentLocationIndex = normalizedIndex;
+  markerElements.forEach((marker, markerIndex) => marker.classList.toggle('is-active', markerIndex === normalizedIndex));
   showLocation(LOCATIONS[normalizedIndex]);
 }
 
@@ -366,8 +369,10 @@ map.on('load', () => {
 
       const labelFeatures = geojson.features.filter(feature => feature.properties?.placename);
 
+      markerElements = [];
       LOCATIONS.forEach((loc, idx) => {
         const el = makeMarkerEl(loc.numeral);
+        markerElements.push(el);
         el.addEventListener('click', () => setLocationIndex(idx));
 
         new maplibregl.Marker({ element: el })

@@ -1,0 +1,295 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "placename": "Haiti"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -72.2852,
+          18.9712
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "placename": "St Lucia"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -60.9789,
+          13.9094
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "placename": "Dominica"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.371,
+          15.415
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "placename": "Grenada"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.6042,
+          12.1165
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "placename": "Tobago"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -60.666,
+          11.25
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "placename": "Jamaica"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.2975,
+          18.1096
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "placename": "Suriname"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -56.0278,
+          3.9193
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "placename": "Cuba"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -77.7812,
+          21.5218
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "placename": "Carriacou"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.4552,
+          12.4806
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.1177884,
+          19.1582516
+        ]
+      },
+      "properties": {
+        "id": "lasirenn",
+        "name": "Lasirenn",
+        "subtitle": "Haiti",
+        "numeral": "I",
+        "description": "Lasirenn (sometimes spelt La Sirene/ Lasiren) is generally understood as the watery evocation of the Ezili pantheon of deities within the Vodou religion. She is understood as a mermaid who lives in the ocean and acts as a guardian ‘<a href=\"https://muse.jhu.edu/pub/259/article/763543/pdf\" target=\"_blank\" rel=\"noopener\">of mystical knowledge… with an unfixable fluidity’.</a> Lasirenn is often described as having brown skin and a pink tail, living at the bottom of the sea in a palace filled with shipwrecked gold, and is told to take some of her initiates on a three-day underwater retreat, where they return with a ‘miraculous knowledge of healing arts, so you can heal the pain of being present to life on land; and with the ability to see the future, so you know you can make it okay’. (<a href=\"https://www.dukeupress.edu/ezilis-mirrors\" target=\"_blank\" rel=\"noopener\">Tinsley p. 147</a>)",
+        "artist": "Jean-Baptiste Jean Joseph",
+        "images": [
+          "lasirenn-0.jpg"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -60.8196104,
+          13.8818626
+        ]
+      },
+      "properties": {
+        "id": "mamadleau",
+        "name": "Mama D'Leau",
+        "subtitle": "St Lucia · Dominica · Grenada",
+        "numeral": "II",
+        "description": "Mama D’Leau (sometimes spelt Mama Glo or Mama Dglo), a powerful mermaid who is often described as dwelling in the sea and who features in several well-established folk stories across the Eastern Caribbean<a href=\"https://www.jstor.org/stable/26759623\" target=\"_blank\" rel=\"noopener\">. Patricia Mohammed</a> explains ‘glo, derived from the French maman de l'eau (mother of the water) is a more feared than benevolent creature who possesses the head of a woman and the body of a snake.’  As a mermaid, and as her name suggests, Mama D’Leau is often characterised as a maternal protectress of the water and its inhabitants (although her maternal nature is one that often evokes fear rather than assurance).",
+        "artist": "Sophie Bass",
+        "images": [
+          "mamadleau-0.jpg"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -60.5803775,
+          11.1143974
+        ]
+      },
+      "properties": {
+        "id": "fairymaids",
+        "name": "Mermaids & Fairymaids",
+        "subtitle": "Tobago",
+        "numeral": "III",
+        "description": "According to the local lore of Tobago, “Mermaids… are male in sex, Fairymaids female. The former ‘live in the sea’ the latter ‘in the rivers’” (<a href=\"https://www-jstor-org.bris.idm.oclc.org/stable/40652607?seq=1\" target=\"_blank\" rel=\"noopener\">Meikle, p. 103</a>). Fairymaids have fair skin, long blonde hair, and the ability to transform mediocrity into genius. Thus, Tobagonian merfolk are beautiful and powerful, but are also described as being vulnerable to intense jealousy. H.B Meikle, through interviews with Tobagonians, describes fairymaids luring human men into their underwater home, and ‘taking his shadow’, thereby controlling him. The fairymaid, then, is a figure that is as alluring as she is powerful and dangerous.",
+        "artist": "H.B. Meikle (oral tradition)",
+        "images": [
+          "fairymaids-0.jpg"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -76.8484838,
+          17.7368597
+        ]
+      },
+      "properties": {
+        "id": "rivermumma",
+        "name": "River Mumma",
+        "subtitle": "Jamaica",
+        "numeral": "IV",
+        "description": "A powerful river-dwelling mermaid, River Mumma is understood as the mother of all fish (a warning against overfishing), and is described as beautiful with long dark hair that she maintains with a golden comb. She is most strongly associated with the Rio Cobre river in St. Catherine, particularly under the historic Flat Bridge, and is said to guard a sunken solid golden table, dropped in the river by the Spanish. <a href=\"https://sites.utexas.edu/llilas-benson-magazine/2023/10/17/river-mumma-fluid-crossings-and-mermaid-spirits-in-revival-zion-religion/\" target=\"_blank\" rel=\"noopener\">Friedman</a> explains that on the hottest days, ‘the Golden Table will rise slowly to the surface and hover there. When the greedy see that table, they long to steal it. Many have tried and have been pulled all the way to the bottom.’",
+        "artist": "Donnette A. Cooper",
+        "images": [
+          "rivermumma-0.jpg",
+          "rivermumma-1.jpg"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -55.3246591,
+          6.3012485
+        ]
+      },
+      "properties": {
+        "id": "watramama",
+        "name": "Watramama",
+        "subtitle": "Suriname",
+        "numeral": "V",
+        "description": "Watramama – the mother of the waters – is a creolised Afro-Surinamese deity, understood to be closely connected to Mami Wata of the West African tradition. A goddess of the Winti religion, she is the ruler of all aquatic life, and has the power to bestow fertility and wealth on those who follow her. In the 1770s, the worship of Watramama – which acted as a spiritual coping mechanism for trafficked African people – was made <a href=\"https://www.instagram.com/p/CdGzEmdM2VB/?hl=en-gb&img_index=9\" target=\"_blank\" rel=\"noopener\">illegal</a> because the dance her initiates performed became associated with resistance against enslavement.",
+        "artist": "John Lie-A-Fo",
+        "images": [
+          "watramama-0.jpg"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.5191884,
+          12.0903853
+        ]
+      },
+      "properties": {
+        "id": "grandetang",
+        "name": "The Grand Étang Mermaid",
+        "subtitle": "Grenada",
+        "numeral": "VI",
+        "description": "Grand Etang is a rainforest in Grenada that is home to a volcanic crater lake. Lore dictates that the lake is so deep that no one has ever made it to the bottom. Swimming is not allowed in the lake, and local legend has it this is partly because the lake is home to a mermaid-like goddess seduces men to then drag them down into the depths of the water. Author Ricardo Keens-Douglas wrote a children’s book called <a href=\"https://www.worldofbooks.com/en-gb/products/nutmeg-princess-book-ricardo-keens-douglas-9781550372366?sku=GOR003583105&gad_source=1&gad_campaignid=17415898947&gbraid=0AAAAADZzAIDyBANOawbgfBx1AC9kJ3J0T&gclid=Cj0KCQjw2_TQBhCnARIsAF3-Xhwo1rhLMbKFfT04iAZScA-IlUsmeEFKOh5dmINBKXQGqmR5IycF1hUaAsfDEALw_wcB\" target=\"_blank\" rel=\"noopener\">The Nutmeg Princess</a> (1992), set in Grenada, wherein the eponymous character is a deity who lives in a lake rumoured to have no bottom – it seems likely that the book is influenced by the legend of the Grand Etang mermaid.",
+        "artist": "Troy Lewis / Lena Kilde (Grenada Underwater Sculpture Park)",
+        "images": [
+          "grandetang-0.jpg",
+          "grandetang-1.jpg"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -80.1289501,
+          21.2823909
+        ]
+      },
+      "properties": {
+        "id": "yemaya",
+        "name": "Yemayá & Oshún",
+        "subtitle": "Cuba",
+        "numeral": "VII",
+        "description": "Yemayá and Oshun are two of the most revered deities of the Santeria tradition – an African-derived religion that originated in Cuba and is now practiced across the African diaspora. Yemayá is described as living in the ocean, being the patron saint of motherhood and maternity, and the protector of children and fishermen. Her colours are blue and white, and she encouraged her initiates to be their most authentic selves. Oshun is understood as a freshwater deity. She typically is described residing in rivers, is associated with the colour yellow, and acts as deity of beauty, love, sensuality and wealth. Yemayá and Oshun are typically understood to be sisters, in traditional folklore, and often described as mermaids.",
+        "artist": "Harmonia Rosales",
+        "images": [
+          "yemaya-0.png",
+          "yemaya-1.jpg",
+          "yemaya-2.jpg"
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -61.3463649,
+          12.4197111
+        ]
+      },
+      "properties": {
+        "id": "carriacou",
+        "name": "The Carriacou Mermaid",
+        "subtitle": "Carriacou",
+        "numeral": "VIII",
+        "description": "Carriacou has a long tradition of mermaid folklore, perhaps best encapsulated through the work of renowned folk artist Canute Caliste. According to his obituary in The Guardian, Caliste ‘claimed to have been inspired to begin painting… when he was told by a vision of a mermaid that, if he followed the Bible, he could achieve anything he wanted’ (<a href=\"https://www.theguardian.com/news/2005/nov/25/guardianobituaries.artsobituaries\" target=\"_blank\" rel=\"noopener\">Mason 2005</a>). This assertion feels uniquely Caribbean. That a mermaid would encourage Caliste to become a more observant Christian speaks to the many fragments that work together to make up Caribbean worlds.",
+        "artist": "Canute Caliste",
+        "images": [
+          "carriacou-0.jpg",
+          "carriacou-1.jpg"
+        ]
+      }
+    }
+  ]
+}

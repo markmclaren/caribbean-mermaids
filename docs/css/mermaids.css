@@ -179,6 +179,15 @@ body {
   z-index: 2;
 }
 
+.sidebar-intro p.sidebar-attribution{
+  margin-top: 1em;
+}
+
+.sidebar-intro p.sidebar-attribution a{
+  color: var(--gold-light);
+  text-decoration: underline;
+}
+
 .sidebar-top,
 .sidebar-content {
   position: relative;

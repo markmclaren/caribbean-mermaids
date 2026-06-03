@@ -196,7 +196,11 @@
         "subtitle": "Jamaica",
         "numeral": "IV",
         "description": "A powerful river-dwelling mermaid, River Mumma is understood as the mother of all fish (a warning against overfishing), and is described as beautiful with long dark hair that she maintains with a golden comb. She is most strongly associated with the Rio Cobre river in St. Catherine, particularly under the historic Flat Bridge, and is said to guard a sunken solid golden table, dropped in the river by the Spanish. <a href=\"https://sites.utexas.edu/llilas-benson-magazine/2023/10/17/river-mumma-fluid-crossings-and-mermaid-spirits-in-revival-zion-religion/\" target=\"_blank\" rel=\"noopener\">Friedman</a> explains that on the hottest days, ‘the Golden Table will rise slowly to the surface and hover there. When the greedy see that table, they long to steal it. Many have tried and have been pulled all the way to the bottom.’",
-        "artist": "Donnette A. Cooper",
+        "artist": "Richard Nattoo / Donnette A. Cooper",
+        "imageCredits": [
+          "Gift of the Night — Richard Nattoo",
+          "River Mumma — Donnette A. Cooper"
+        ],
         "images": [
           "rivermumma-0.jpg",
           "rivermumma-1.jpg"
@@ -240,6 +244,10 @@
         "numeral": "VI",
         "description": "Grand Etang is a rainforest in Grenada that is home to a volcanic crater lake. Lore dictates that the lake is so deep that no one has ever made it to the bottom. Swimming is not allowed in the lake, and local legend has it this is partly because the lake is home to a mermaid-like goddess seduces men to then drag them down into the depths of the water. Author Ricardo Keens-Douglas wrote a children’s book called <a href=\"https://www.worldofbooks.com/en-gb/products/nutmeg-princess-book-ricardo-keens-douglas-9781550372366?sku=GOR003583105&gad_source=1&gad_campaignid=17415898947&gbraid=0AAAAADZzAIDyBANOawbgfBx1AC9kJ3J0T&gclid=Cj0KCQjw2_TQBhCnARIsAF3-Xhwo1rhLMbKFfT04iAZScA-IlUsmeEFKOh5dmINBKXQGqmR5IycF1hUaAsfDEALw_wcB\" target=\"_blank\" rel=\"noopener\">The Nutmeg Princess</a> (1992), set in Grenada, wherein the eponymous character is a deity who lives in a lake rumoured to have no bottom – it seems likely that the book is influenced by the legend of the Grand Etang mermaid.",
         "artist": "Troy Lewis / Lena Kilde (Grenada Underwater Sculpture Park)",
+        "imageCredits": [
+          "Mermaid — Troy Lewis (Grenada Underwater Sculpture Park)",
+          "Nutmeg Princess — Lena Kilde (Grenada Underwater Sculpture Park)"
+        ],
         "images": [
           "grandetang-0.jpg",
           "grandetang-1.jpg"
@@ -262,6 +270,11 @@
         "numeral": "VII",
         "description": "Yemayá and Oshun are two of the most revered deities of the Santeria tradition – an African-derived religion that originated in Cuba and is now practiced across the African diaspora. Yemayá is described as living in the ocean, being the patron saint of motherhood and maternity, and the protector of children and fishermen. Her colours are blue and white, and she encouraged her initiates to be their most authentic selves. Oshun is understood as a freshwater deity. She typically is described residing in rivers, is associated with the colour yellow, and acts as deity of beauty, love, sensuality and wealth. Yemayá and Oshun are typically understood to be sisters, in traditional folklore, and often described as mermaids.",
         "artist": "Harmonia Rosales",
+        "imageCredits": [
+          "Yemaya's Ascension into the Waters — Harmonia Rosales",
+          "Yemaya and Oshun: The Shoreline Between Worlds",
+          "The Birth of Oshun — Harmonia Rosales"
+        ],
         "images": [
           "yemaya-0.png",
           "yemaya-1.jpg",
@@ -285,6 +298,10 @@
         "numeral": "VIII",
         "description": "Carriacou has a long tradition of mermaid folklore, perhaps best encapsulated through the work of renowned folk artist Canute Caliste. According to his obituary in The Guardian, Caliste ‘claimed to have been inspired to begin painting… when he was told by a vision of a mermaid that, if he followed the Bible, he could achieve anything he wanted’ (<a href=\"https://www.theguardian.com/news/2005/nov/25/guardianobituaries.artsobituaries\" target=\"_blank\" rel=\"noopener\">Mason 2005</a>). This assertion feels uniquely Caribbean. That a mermaid would encourage Caliste to become a more observant Christian speaks to the many fragments that work together to make up Caribbean worlds.",
         "artist": "Canute Caliste",
+        "imageCredits": [
+          "Canute Caliste",
+          "Canute Caliste"
+        ],
         "images": [
           "carriacou-0.jpg",
           "carriacou-1.jpg"

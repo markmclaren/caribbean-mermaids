@@ -256,10 +256,11 @@ function makeMarkerEl(numeral) {
   const div = document.createElement('div');
   div.className = 'mermaid-marker';
   div.innerHTML = `
-    <svg viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg">
-      <circle cx="22" cy="22" r="20" fill="#0a1628" stroke="#c5a059" stroke-width="2"/>
-      <circle cx="22" cy="22" r="16" fill="none" stroke="#c5a059" stroke-width="0.5" opacity="0.5"/>
-      <text x="22" y="27" text-anchor="middle" font-family="Cinzel, serif" font-size="11" fill="#c5a059" font-weight="600">${numeral}</text>
+    <svg viewBox="0 0 44 44" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <circle cx="22" cy="22" r="18.5" fill="rgba(5, 7, 12, 0.74)" stroke="#f0d98f" stroke-width="1.25" opacity="0.9"/>
+      <circle cx="22" cy="22" r="14.5" fill="rgba(197, 160, 89, 0.08)" stroke="#c5a059" stroke-width="0.65" opacity="0.68"/>
+      <path d="M22 7.5 L24.8 19.2 L36.5 22 L24.8 24.8 L22 36.5 L19.2 24.8 L7.5 22 L19.2 19.2 Z" fill="none" stroke="#f0d98f" stroke-width="0.55" opacity="0.36"/>
+      <text x="22" y="26.7" text-anchor="middle" font-family="Cinzel, serif" font-size="10.5" fill="#f0d98f" font-weight="600" letter-spacing="0.04em">${numeral}</text>
     </svg>`;
   return div;
 }
@@ -296,12 +297,12 @@ function showLocation(loc) {
   document.getElementById('card-title').textContent = loc.name;
   document.getElementById('card-location').textContent = loc.subtitle;
   document.getElementById('card-description').innerHTML = loc.description;
-  document.getElementById('card-artist').textContent = 'Artwork: ' + loc.artist;
 
   const illus = document.getElementById('card-illustration');
   illus.innerHTML = '';
 
   currentImages = loc.images;
+  currentImageCredits = loc.imageCredits || currentImages.map(() => loc.artist);
   currentImgIdx = 0;
 
   currentImages.forEach((src, i) => {
@@ -341,6 +342,8 @@ function showLocation(loc) {
     illus.appendChild(nav);
   }
 
+  showImg(0);
+
   map.flyTo({ center: [loc.lng, loc.lat], zoom: Math.max(map.getZoom(), 5.5), essential: true });
 }
 
@@ -364,6 +367,7 @@ map.on('load', () => {
           lng: feature.geometry.coordinates[0],
           description: feature.properties.description,
           artist: feature.properties.artist,
+          imageCredits: feature.properties.imageCredits,
           images: feature.properties.images.map(filename => `images/${filename}`)
         }));
 
@@ -395,16 +399,28 @@ map.on('load', () => {
         layout: {
           'text-field': ['get', 'placename'],
           'text-font': ['Open Sans Semibold', 'Arial Unicode MS Regular'],
-          'text-size': 18,
+          'text-size': [
+            'interpolate', ['linear'], ['zoom'],
+            3, 15,
+            5, 20,
+            7, 26
+          ],
           'text-anchor': 'center',
           'text-offset': [0, 0],
           'text-allow-overlap': true,
           'text-variable-anchor': ['center', 'top', 'bottom', 'left', 'right']
         },
         paint: {
-          'text-color': '#ffffff',
-          'text-halo-color': '#0a1628',
-          'text-halo-width': 2
+          'text-color': '#f0d98f',
+          'text-opacity': [
+            'interpolate', ['linear'], ['zoom'],
+            3, 0.34,
+            5, 0.52,
+            7, 0.62
+          ],
+          'text-halo-color': 'rgba(5, 7, 12, 0.78)',
+          'text-halo-width': 1.25,
+          'text-halo-blur': 1.2
         }
       });
 
@@ -430,6 +446,7 @@ map.on('load', () => {
 
 let currentImgIdx = 0;
 let currentImages = [];
+let currentImageCredits = [];
 
 function showImg(idx) {
   const imageCount = currentImages.length;
@@ -439,5 +456,7 @@ function showImg(idx) {
   const dots = illus.querySelectorAll('.img-dot');
   imgs.forEach((img, i) => img.classList.toggle('active', i === normalizedIndex));
   dots.forEach((dot, i) => dot.classList.toggle('active', i === normalizedIndex));
+  const credit = currentImageCredits[normalizedIndex] || currentImageCredits[0] || '';
+  document.getElementById('card-artist').textContent = credit ? `Artwork: ${credit}` : '';
   currentImgIdx = normalizedIndex;
 }
